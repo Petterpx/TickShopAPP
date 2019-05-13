@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:id="@+id/sort_toolbar"
+        android:paddingTop="@dimen/dp_10"
+        android:background="@android:color/holo_orange_dark"
+        android:layout_height="60dp">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="分类"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_background"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.ContentFrameLayout
+            android:layout_width="0dp"
+            android:background="#fff"
+            android:id="@+id/vertical_list_container"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <android.support.v7.widget.ContentFrameLayout
+            android:layout_width="0dp"
+            android:id="@+id/sort_content_container"
+            android:layout_height="match_parent"
+            android:layout_marginRight="8dp"
+            android:background="#fff"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="2.5"/>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+</LinearLayout>
