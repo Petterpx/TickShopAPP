@@ -2,7 +2,7 @@ package com.petterp.latte_ui.refresh;
 
 /**
  * @author Petterp on 2019/4/24
- * Summary:数据类
+ * Summary:数据类,Bean
  * 邮箱：1509492795@qq.com
  */
 public class PaginBean {

@@ -22,21 +22,32 @@ import java.util.List;
  */
 public class OrderListAdapter extends MultipleRecyclearAdapter {
 
-    protected OrderListAdapter(List<MulitpleItemEntity> data) {
-        super(data);
-        addItemType(OrderListItemType.ITEM_ORDER_LIST, R.layout.item_order_list);
-    }
+    //图片加载
     private static final RequestOptions OPTIONS = new RequestOptions()
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .centerCrop()
             .fitCenter()
             .dontAnimate();
 
+    /**
+     * Same as QuickAdapter#QuickAdapter(Context,int) but with
+     * some initialization data.
+     * 在这里加载一些布局
+     *
+     * @param data A new list is created out of this one to avoid mutable list
+     */
+    protected OrderListAdapter(List<MulitpleItemEntity> data) {
+        super(data);
+        //添加item
+        addItemType(OrderListItemType.ITEM_ORDER_LIST, R.layout.item_order_list);
+    }
+
     @SuppressLint("SetTextI18n")
     @Override
     public void convert(MulitipleViewHolder holder, MulitpleItemEntity entity) {
         super.convert(holder, entity);
         switch (holder.getItemViewType()) {
+            //用上面存的标记来卡
             case OrderListItemType.ITEM_ORDER_LIST:
                 final AppCompatImageView imageView =holder.getView(R.id.image_order_list);
                 final AppCompatTextView title=holder.getView(R.id.tv_order_list_title);

@@ -125,7 +125,7 @@ public class IndexDelegate extends BottomItemDelegate {
 
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View view) {
-        //传入下拉刷新事件
+        //传入下拉刷新事件,并生成了Adapter。。。
         mRefreHandler = RefreshHandler.create(mRefreshLayout, mRecyclerView, new IndexDataConverter());
         initRecyclearView();
         //适配Toolbar变色

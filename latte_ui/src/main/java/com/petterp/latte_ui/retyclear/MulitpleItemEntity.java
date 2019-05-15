@@ -9,7 +9,7 @@ import java.util.WeakHashMap;
 
 /**
  * @author Petterp on 2019/4/23
- * Summary:
+ * Summary:Item的样式
  * 邮箱：1509492795@qq.com
  */
 public class MulitpleItemEntity implements MultiItemEntity {

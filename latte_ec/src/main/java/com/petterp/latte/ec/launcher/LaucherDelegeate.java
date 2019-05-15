@@ -26,7 +26,7 @@ import butterknife.OnClick;
 
 /**
  * @author Petterp on 2019/4/20
- * Summary:
+ * Summary:启动。。
  * 邮箱：1509492795@qq.com
  */
 public class LaucherDelegeate extends LatteDelegate implements ITimerListener {
@@ -105,7 +105,9 @@ public class LaucherDelegeate extends LatteDelegate implements ITimerListener {
                 //没有用户信息
                 public void onNotSoignIn() {
                     if (mILauncherListener!=null){
-                        mILauncherListener.onLauncherFinish(OnLauncherFinishTag.NOT_SIGNED);
+//                        mILauncherListener.onLauncherFinish(OnLauncherFinishTag.NOT_SIGNED);
+                        mILauncherListener.onLauncherFinish(OnLauncherFinishTag.SIGNED);
+
                     }
                 }
             });

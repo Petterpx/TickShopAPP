@@ -9,7 +9,7 @@ import com.petterp.latte_core.delegates.LatteDelegate;
 
 /**
  * @author Petterp on 2019/4/27
- * Summary:
+ * Summary:item的点击事件
  * 邮箱：1509492795@qq.com
  */
 public class IndexItemClickListener extends SimpleClickListener {

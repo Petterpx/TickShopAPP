@@ -20,6 +20,7 @@ public class OrderListDataConverter extends DataConverter {
         final JSONArray array=JSON.parseObject(getJsonData()).getJSONArray("data");
         final int size=array.size();
         for (int i=0;i<size;i++){
+            //解析数据，存入Entity
             final JSONObject data=array.getJSONObject(i);
             final String thumb=data.getString("thumb");
             final String title=data.getString("title");

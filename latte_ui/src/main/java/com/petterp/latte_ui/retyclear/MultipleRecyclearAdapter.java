@@ -27,7 +27,8 @@ import java.util.List;
  * 邮箱：1509492795@qq.com
  */
 public class MultipleRecyclearAdapter extends
-        BaseMultiItemQuickAdapter<MulitpleItemEntity, MulitipleViewHolder> implements BaseQuickAdapter.SpanSizeLookup, OnItemClickListener {
+        BaseMultiItemQuickAdapter<MulitpleItemEntity,
+                MulitipleViewHolder> implements BaseQuickAdapter.SpanSizeLookup, OnItemClickListener {
 
 
     //确保初始化一次Banner，防止重复加载
@@ -44,7 +45,7 @@ public class MultipleRecyclearAdapter extends
     /**
      * Same as QuickAdapter#QuickAdapter(Context,int) but with
      * some initialization data.
-     *
+     *在这里加载一些布局
      * @param data A new list is created out of this one to avoid mutable list
      */
     protected MultipleRecyclearAdapter(List<MulitpleItemEntity> data) {
@@ -64,7 +65,7 @@ public class MultipleRecyclearAdapter extends
     }
 
     /**
-     * 进行数据转换
+     * 进行数据转换,针对不同的布局做出不同选择
      */
     public void convert(MulitipleViewHolder holder, MulitpleItemEntity entity) {
         final String text;
@@ -119,6 +120,7 @@ public class MultipleRecyclearAdapter extends
 
         //设置宽度监听
         setSpanSizeLookup(this);
+        //加载时打开动画
         openLoadAnimation();
         //多次执行动画
         isFirstOnly(false);
@@ -129,6 +131,7 @@ public class MultipleRecyclearAdapter extends
     public void onItemClick(int position) {
 
     }
+
 
     //传入我们现有的ViewHolder
     @Override
