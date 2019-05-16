@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  * @author Petterp on 2019/4/30
- * Summary:个人中心数据转化类
+ * Summary:我的订单数据转化类
  * 邮箱：1509492795@qq.com
  */
 public class OrderListDataConverter extends DataConverter {
