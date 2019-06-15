@@ -1,4 +1,4 @@
-package com.petterp.latte_core.delegates.web.camera;
+package com.petterp.latte_core.ui.camera;
 
 
 import com.yalantis.ucrop.UCrop;

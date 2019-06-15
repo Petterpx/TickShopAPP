@@ -33,6 +33,7 @@ public class UsetProfileClickListener extends SimpleClickListener {
         switch (id){
             case 1:
                 //开始照相机或选择图片
+                DELEGATE.startCameraWithCheck();
                 break;
             case 2:
                 final LatteDelegate nameDelagate=bean.getmDelegate();

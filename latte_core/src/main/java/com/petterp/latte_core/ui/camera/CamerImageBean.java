@@ -1,4 +1,4 @@
-package com.petterp.latte_core.delegates.web.camera;
+package com.petterp.latte_core.ui.camera;
 
 import android.net.Uri;
 
@@ -9,18 +9,20 @@ import android.net.Uri;
  */
 public final class CamerImageBean {
 
-    private Uri mPath=null;
-    private static final CamerImageBean INSTANCE=new CamerImageBean();
+    private Uri mPath = null;
+
+    private static final CamerImageBean INSTANCE = new CamerImageBean();
 
     public static CamerImageBean getInstance(){
         return INSTANCE;
     }
-    public Uri getPath(){
+
+    public Uri getPath() {
         return mPath;
     }
 
-    public void setPath(Uri mPath){
-        this.mPath=mPath;
+    public void setPath(Uri mPath) {
+        this.mPath = mPath;
     }
 
 }

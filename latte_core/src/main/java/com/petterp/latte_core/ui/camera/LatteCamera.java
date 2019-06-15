@@ -1,4 +1,4 @@
-package com.petterp.latte_core.delegates.web.camera;
+package com.petterp.latte_core.ui.camera;
 
 import android.net.Uri;
 
@@ -11,14 +11,14 @@ import com.petterp.latte_core.util.file.FileUtil;
  * 邮箱：1509492795@qq.com
  */
 public class LatteCamera {
-    public static Uri createCropFile(){
-        return Uri.parse(FileUtil.createFile("crop_image",
-                FileUtil.getFileNameByTime("IMG","jpg"))
-                .getPath());
-    }
-    public static void start(PermissionCheckerDelegate delegate){
-        new CameraHandler(delegate).beginCameraDialog();
+    public static Uri createCropFile() {
+        return Uri.parse
+                (FileUtil.createFile("crop_image",
+                        FileUtil.getFileNameByTime("IMG", "jpg")).getPath());
     }
 
+    public static void start(PermissionCheckerDelegate delegate) {
+        new CameraHandler(delegate).beginCameraDialog();
+    }
 
 }

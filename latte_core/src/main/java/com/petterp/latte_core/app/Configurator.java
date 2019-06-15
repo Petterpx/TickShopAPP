@@ -45,11 +45,11 @@ public class Configurator {
 
     public final void configure() {
         //初始化AndroidUtilsCode
-        Utils.init(Latte.getApplication());
         initIcons();
         //配置项完成
         Logger.addLogAdapter(new AndroidLogAdapter());
         LATTE_CONFIGS.put(ConfigKeys.CONFIG_READY.name(), true);
+        Utils.init(Latte.getApplication());
     }
 
     public static Configurator getInstance() {
