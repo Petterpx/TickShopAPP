@@ -19,10 +19,7 @@ import com.petterp.latte_ui.retyclear.MultipleRecyclearAdapter;
  * Summary:用来监听下拉操作
  * 邮箱：1509492795@qq.com
  */
-public class  RefreshHandler implements
-        SwipeRefreshLayout.OnRefreshListener
-        ,BaseQuickAdapter.RequestLoadMoreListener
-{
+public class RefreshHandler implements SwipeRefreshLayout.OnRefreshListener, BaseQuickAdapter.RequestLoadMoreListener {
 
 
     //下拉刷新
@@ -48,7 +45,7 @@ public class  RefreshHandler implements
     public static RefreshHandler create(SwipeRefreshLayout swipeRefreshLayout,
                                         RecyclerView recyclerView,
                                         DataConverter converter
-                                       ) {
+    ) {
         return new RefreshHandler(swipeRefreshLayout, recyclerView, converter, new PaginBean());
     }
 
@@ -76,6 +73,7 @@ public class  RefreshHandler implements
 
     /**
      * 加载第一页
+     *
      * @param url
      */
     public void fristPage(String url) {
@@ -85,13 +83,13 @@ public class  RefreshHandler implements
                 .success(new ISuccess() {
                     @Override
                     public void onSuccess(String response) {
-                       final JSONObject object=JSON.parseObject(response);
-                       BEAN.setTotal(object.getInteger("total"))
-                               .setPageSize(object.getInteger("page_size"));
-                       //设置Adapter
-                        mAdapter=MultipleRecyclearAdapter.create(CONVERTER.setJsonData(response));
+                        final JSONObject object = JSON.parseObject(response);
+                        BEAN.setTotal(object.getInteger("total"))
+                                .setPageSize(object.getInteger("page_size"));
+                        //设置Adapter
+                        mAdapter = MultipleRecyclearAdapter.create(CONVERTER.setJsonData(response));
                         //賦予RecyclearView下拉刷新
-                        mAdapter.setOnLoadMoreListener(RefreshHandler.this,RECYCLEARVIEW);
+                        mAdapter.setOnLoadMoreListener(RefreshHandler.this, RECYCLEARVIEW);
                         RECYCLEARVIEW.setAdapter(mAdapter);
                         BEAN.addIndex();
                     }

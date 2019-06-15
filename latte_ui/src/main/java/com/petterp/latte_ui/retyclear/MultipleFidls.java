@@ -2,6 +2,7 @@ package com.petterp.latte_ui.retyclear;
 
 /**
  * @author Petterp on 2019/4/23
+ * Summary:通用的字段
  * Summary:一个枚举类
  * 邮箱：1509492795@qq.com
  */

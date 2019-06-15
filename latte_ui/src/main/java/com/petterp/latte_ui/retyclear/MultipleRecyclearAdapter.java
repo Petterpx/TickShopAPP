@@ -35,7 +35,7 @@ public class MultipleRecyclearAdapter extends
     private boolean mIsInitBanner = false;
 
     //设置图片加载策略
-    private static final RequestOptions REQUEST_OPTIONS =
+    public static final RequestOptions REQUEST_OPTIONS =
             new RequestOptions()
                     .centerCrop()
                     .fitCenter()

@@ -12,7 +12,9 @@ import com.petterp.latte.ec.R2;
 import com.petterp.latte.ec.main.personal.list.ListAdapter;
 import com.petterp.latte.ec.main.personal.list.ListBean;
 import com.petterp.latte.ec.main.personal.list.ListItemType;
-import com.petterp.latte.ec.main.personal.list.order.OrderListDelegate;
+import com.petterp.latte.ec.main.personal.order.OrderListDelegate;
+import com.petterp.latte.ec.main.personal.payment.PaymentListDelegete;
+import com.petterp.latte.ec.main.personal.profile.UserProfileDelegate;
 import com.petterp.latte_core.delegates.bottom.BottomItemDelegate;
 
 import java.util.ArrayList;
@@ -38,10 +40,27 @@ public class PersonalDelegate extends BottomItemDelegate {
         getParentDelegate().getSupportDelegate().start(delegate);
         //a
     }
+
+    private void startPaymentListByType(){
+        final PaymentListDelegete delegate=new PaymentListDelegete();
+        delegate.setArguments(mArgs);
+        getParentDelegate().getSupportDelegate().start(delegate);
+    }
     @OnClick(R2.id.tv_all_order)
     void onClickAllOrder(){
         mArgs.putString(ORDER_TYPE,"all");
         startOrderListByType();
+    }
+
+    @OnClick(R2.id.ll_pay)
+    void onClickPayMent(){
+        mArgs.putString(PAYMENT_TYPE,"payment");
+        startPaymentListByType();
+    }
+
+    @OnClick(R2.id.img_user_avatar)
+    void onclickAvatar(){
+        getParentDelegate().getSupportDelegate().start(new UserProfileDelegate());
     }
 
     @Override
@@ -51,6 +70,7 @@ public class PersonalDelegate extends BottomItemDelegate {
     }
 
     public static final String ORDER_TYPE = "ORDER_TYPE";
+    public static final String PAYMENT_TYPE="PAYMENT_TYPE";
 
     @Override
     public Object setLayout() {
@@ -60,6 +80,7 @@ public class PersonalDelegate extends BottomItemDelegate {
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, @NonNull View rootView) {
         final ListBean address = new ListBean.Builder()
+                //写入标记
                 .setItemType(ListItemType.ITEM_BORNAL)
                 .setText("收货地址")
                 .build();

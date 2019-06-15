@@ -4,7 +4,7 @@ import android.widget.AdapterView;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
-import com.petterp.latte.R;
+import com.petterp.latte_ui.R;
 
 import java.util.ArrayList;
 

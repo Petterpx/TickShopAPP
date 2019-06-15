@@ -33,6 +33,7 @@ import java.util.Locale;
 
 /**
  * Created by
+ * 工具类
  */
 public final class FileUtil {
 
@@ -344,6 +345,12 @@ public final class FileUtil {
         }
     }
 
+    /**
+     * 将url方法转化为真实路径
+     * @param context
+     * @param uri
+     * @return
+     */
     public static String getRealFilePath(final Context context, final Uri uri) {
         if (null == uri) return null;
         final String scheme = uri.getScheme();

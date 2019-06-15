@@ -1,4 +1,4 @@
-package com.petterp.latte.ec.main.personal;
+package com.petterp.latte.ec.main.personal.settings;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,14 +9,14 @@ import com.petterp.latte.ec.R;
 import com.petterp.latte_core.delegates.LatteDelegate;
 
 /**
- * @author Petterp on 2019/05/17
+ * @author Petterp on 2019/6/15
  * Summary:
  * 邮箱：1509492795@qq.com
  */
-public class UserProfileDelegate extends LatteDelegate {
+public class NameDelegate extends LatteDelegate {
     @Override
     public Object setLayout() {
-        return R.layout.delegate_user_proifile;
+        return R.layout.delegate_name;
     }
 
     @Override

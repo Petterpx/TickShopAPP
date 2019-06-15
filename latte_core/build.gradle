@@ -41,7 +41,6 @@ dependencies {
     api project(':latte_annotations')
     api 'junit:junit:4.12'
 
-
     //
     implementation 'com.android.support:multidex:1.0.3'
 
@@ -129,4 +128,14 @@ dependencies {
     //google AutoValue   provided(指代码只存在于编译器，运行期间代码是废弃的)
     provided 'com.google.auto.value:auto-value-annotations:1.6.2'
     annotationProcessor "com.google.auto.value:auto-value:1.6.2"
+
+    //动态权限处理
+    api 'com.github.hotchemi:permissionsdispatcher:2.4.0'
+    annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:2.4.0'
+
+    //单元测试等工具类
+    implementation 'com.blankj:utilcode:1.24.2'
+
+    //图片裁剪
+    implementation 'com.github.yalantis:ucrop:2.2.3-native'
 }

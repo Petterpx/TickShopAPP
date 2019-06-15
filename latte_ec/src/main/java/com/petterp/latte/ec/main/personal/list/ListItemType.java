@@ -7,4 +7,5 @@ package com.petterp.latte.ec.main.personal.list;
  */
 public class ListItemType  {
     public static final int ITEM_BORNAL=20;
+    public static final int ITEM_AVATAR=21;
 }

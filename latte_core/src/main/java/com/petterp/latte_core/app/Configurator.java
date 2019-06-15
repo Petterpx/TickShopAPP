@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 
+import com.blankj.utilcode.util.Utils;
 import com.joanzapata.iconify.IconFontDescriptor;
 import com.joanzapata.iconify.Iconify;
 import com.orhanobut.logger.AndroidLogAdapter;
@@ -43,6 +44,8 @@ public class Configurator {
     }
 
     public final void configure() {
+        //初始化AndroidUtilsCode
+        Utils.init(Latte.getApplication());
         initIcons();
         //配置项完成
         Logger.addLogAdapter(new AndroidLogAdapter());

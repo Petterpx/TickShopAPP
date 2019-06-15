@@ -170,6 +170,7 @@ public final class EachTooblar extends RecyclerView.OnScrollListener {
         }
     }
 
+
     public EachTooblar setAndroidNativeLightStatusBar(boolean dark) {
         View decor = getActivity().getWindow().getDecorView();
         if (dark) {

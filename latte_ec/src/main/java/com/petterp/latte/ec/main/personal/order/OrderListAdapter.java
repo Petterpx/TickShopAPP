@@ -1,4 +1,4 @@
-package com.petterp.latte.ec.main.personal.list.order;
+package com.petterp.latte.ec.main.personal.order;
 
 import android.annotation.SuppressLint;
 import android.support.v7.widget.AppCompatImageView;
@@ -42,6 +42,11 @@ public class OrderListAdapter extends MultipleRecyclearAdapter {
         addItemType(OrderListItemType.ITEM_ORDER_LIST, R.layout.item_order_list);
     }
 
+    /**
+     * 数据转换，框架本身会调用
+     * @param holder
+     * @param entity
+     */
     @SuppressLint("SetTextI18n")
     @Override
     public void convert(MulitipleViewHolder holder, MulitpleItemEntity entity) {

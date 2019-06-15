@@ -1,4 +1,4 @@
-package com.petterp.latte.ec.main.personal.list.payment;
+package com.petterp.latte.ec.main.personal.payment;
 
 /**
  * @author Petterp on 2019/05/17

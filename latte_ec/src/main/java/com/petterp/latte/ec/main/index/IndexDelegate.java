@@ -97,6 +97,7 @@ public class IndexDelegate extends BottomItemDelegate {
         return true;
     }
 
+
     /**
      * 用来处理懒加载数据，加载稍慢
      *
@@ -110,6 +111,7 @@ public class IndexDelegate extends BottomItemDelegate {
         //设置RecyclearView 分割线
         mRecyclerView.addItemDecoration(BaseDecoration.create(ContextCompat.getColor(Objects.requireNonNull(getContext()), R.color.app_background), 5));
         mRecyclerView.addOnScrollListener(
+                //单例模式获取EachTooblar对象，并传入mToolbar,这个类实现了RecyclearView的监听
                 EachTooblar.
                         builder().
                         setToolbar(mToolbar).
