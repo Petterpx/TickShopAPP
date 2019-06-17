@@ -15,6 +15,7 @@ import com.petterp.latte_core.delegates.LatteDelegate;
 import com.petterp.latte_ui.launcher.ILauncherListener;
 import com.petterp.latte_ui.launcher.OnLauncherFinishTag;
 
+import cn.jpush.android.api.JPushInterface;
 import qiu.niorgai.StatusBarCompat;
 
 
@@ -60,5 +61,15 @@ public class ExampleActivity extends ProxyActivity implements ISignListener
         }
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        JPushInterface.onPause(this);
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        JPushInterface.onPause(this);
+    }
 }

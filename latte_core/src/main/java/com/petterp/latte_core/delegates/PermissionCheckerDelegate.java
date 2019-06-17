@@ -120,13 +120,13 @@ public abstract class PermissionCheckerDelegate extends BaseDelegate {
                     }
                     break;
                 case RequestCodes.CROP_PHOTO:
-                    Log.e("Demo","我走了");
                     final Uri cropUri = UCrop.getOutput(data);
                     //拿到剪裁后的数据进行处理
                     @SuppressWarnings("unchecked")
                     final IGlobalCallback<Uri> callback = CallbackManager
                             .getInstance()
                             .getCallback(CallbackType.ON_CROP);
+                    //执行回调方法->UsetProfileClickListener 响应
                     if (callback != null) {
                         callback.executeCallback(cropUri);
                     }

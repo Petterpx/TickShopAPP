@@ -134,8 +134,15 @@ dependencies {
     annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:2.4.0'
 
     //单元测试等工具类
-    implementation 'com.blankj:utilcode:1.24.2'
+    api 'com.blankj:utilcode:1.24.2'
 
     //图片裁剪
-    implementation 'com.github.yalantis:ucrop:2.2.3-native'
+    api 'com.github.yalantis:ucrop:2.2.3-native'
+
+    //图片放大缩小
+    api 'com.github.chrisbanes:PhotoView:2.0.0'
+
+    //极光推送
+    api 'cn.jiguang.sdk:jpush:3.1.6'  // 此处以JPush 3.3.2 版本为例。
+    api 'cn.jiguang.sdk:jcore:1.2.5'
 }

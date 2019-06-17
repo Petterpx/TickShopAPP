@@ -38,6 +38,8 @@ public class UserProfileDelegate extends LatteDelegate {
 
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, @NonNull View rootView) {
+
+
         final ListBean image = new ListBean.Builder()
                 //写入标记
                 .setItemType(ListItemType.ITEM_AVATAR)
@@ -75,7 +77,7 @@ public class UserProfileDelegate extends LatteDelegate {
         mRecyclearView.setLayoutManager(manager);
         final ListAdapter adapter=new ListAdapter(data);
         mRecyclearView.setAdapter(adapter);
-        mRecyclearView.addOnItemTouchListener(new UsetProfileClickListener(this));
+        mRecyclearView.addOnItemTouchListener(new UsetProfileClickListener(this,adapter));
 
     }
 

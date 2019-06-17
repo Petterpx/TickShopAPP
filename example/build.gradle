@@ -17,6 +17,17 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "41f0b1b792a9b25a81f37640",
+                JPUSH_CHANNEL: "developer-default",
+        ]
     }
     buildTypes {
         release {
@@ -24,6 +35,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
+
     //强制让所有模块都用相同的支持库版本
     configurations.all {
         resolutionStrategy.eachDependency { DependencyResolveDetails details ->
@@ -50,6 +64,4 @@ dependencies {
     annotationProcessor project(':latte_compiler')
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.facebook.stetho:stetho:1.5.1'
-
-
 }

@@ -4,6 +4,7 @@ package com.petterp.latte_core.app;
 //import com.joanzapata.iconify.Iconify;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 

@@ -68,7 +68,7 @@ public class OrderListDelegate extends LatteDelegate {
                     mRecyclearView.setAdapter(adapter);
                     //设置RecyclearView下划线
                     mRecyclearView.addItemDecoration(BaseDecoration.create(ContextCompat.getColor(Objects.requireNonNull(getContext()), R.color.app_background), 5));
-
+                    mRecyclearView.addOnItemTouchListener(new OrderListClickListener(OrderListDelegate.this));
                 })
                 .build()
                 .get();

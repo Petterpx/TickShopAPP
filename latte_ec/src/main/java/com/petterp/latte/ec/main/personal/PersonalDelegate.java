@@ -9,12 +9,14 @@ import android.view.View;
 
 import com.petterp.latte.ec.R;
 import com.petterp.latte.ec.R2;
+import com.petterp.latte.ec.main.personal.address.AddresDelegate;
 import com.petterp.latte.ec.main.personal.list.ListAdapter;
 import com.petterp.latte.ec.main.personal.list.ListBean;
 import com.petterp.latte.ec.main.personal.list.ListItemType;
 import com.petterp.latte.ec.main.personal.order.OrderListDelegate;
 import com.petterp.latte.ec.main.personal.payment.PaymentListDelegete;
 import com.petterp.latte.ec.main.personal.profile.UserProfileDelegate;
+import com.petterp.latte.ec.main.personal.settings.SettingsDelegate;
 import com.petterp.latte_core.delegates.bottom.BottomItemDelegate;
 
 import java.util.ArrayList;
@@ -63,6 +65,7 @@ public class PersonalDelegate extends BottomItemDelegate {
         getParentDelegate().getSupportDelegate().start(new UserProfileDelegate());
     }
 
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,11 +86,14 @@ public class PersonalDelegate extends BottomItemDelegate {
                 //写入标记
                 .setItemType(ListItemType.ITEM_BORNAL)
                 .setText("收货地址")
+                .setDelegate(new AddresDelegate())
+                .setId(1)
                 .build();
         //系统设置
         final ListBean system = new ListBean.Builder()
                 .setItemType(ListItemType.ITEM_BORNAL)
                 .setId(2)
+                .setDelegate(new SettingsDelegate())
                 .setText("系统设置")
                 .build();
 
@@ -101,5 +107,7 @@ public class PersonalDelegate extends BottomItemDelegate {
         mRvSettings.setLayoutManager(manager);
         final ListAdapter adapter = new ListAdapter(data);
         mRvSettings.setAdapter(adapter);
+        //添加点击事件
+        mRvSettings.addOnItemTouchListener(new PersonalClickListener(this));
     }
 }

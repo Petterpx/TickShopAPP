@@ -1,5 +1,6 @@
 package com.petterp.latte_core.app;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
 
@@ -27,6 +28,9 @@ public final class Latte {
 
     public static Context getApplication(){
         return (Context) getConfiguration().get(ConfigKeys.APPLICATION_CONTEXT);
+    }
+    public static Activity getActivity(){
+        return (Activity) getConfiguration().get(ConfigKeys.ACTIVITY);
     }
 
     public static Handler getHandler() {
