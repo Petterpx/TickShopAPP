@@ -62,7 +62,6 @@ public class ShopCartDelegate extends BottomItemDelegate implements ISuccess, Ic
         //每次点击全选设置价格为初始状态
         final int tag = (int) mIconSelectAll.getTag();
         //如果未选择
-        boolean mode;
         if (tag == 0) {
             mIconSelectAll.setTextColor(ContextCompat.getColor(Objects.requireNonNull(getContext()), R.color.app_main));
             mIconSelectAll.setTag(1);
