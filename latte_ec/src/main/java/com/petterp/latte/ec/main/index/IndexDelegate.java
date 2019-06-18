@@ -18,6 +18,7 @@ import com.joanzapata.iconify.widget.IconTextView;
 import com.petterp.latte.ec.R;
 import com.petterp.latte.ec.R2;
 import com.petterp.latte.ec.main.EcBottomDelgate;
+import com.petterp.latte.ec.main.index.search.SearchDelegate;
 import com.petterp.latte_core.util.Bootomzhaungtai.EachTooblar;
 import com.petterp.latte_core.delegates.bottom.BottomItemDelegate;
 import com.petterp.latte_core.util.callback.CallbackManager;
@@ -36,7 +37,7 @@ import butterknife.OnClick;
  * Summary:首頁
  * 邮箱：1509492795@qq.com
  */
-public class IndexDelegate extends BottomItemDelegate {
+public class IndexDelegate extends BottomItemDelegate implements View.OnFocusChangeListener {
     private int dys;
     @BindView(R2.id.rv_index)
     RecyclerView mRecyclerView = null;
@@ -147,12 +148,20 @@ public class IndexDelegate extends BottomItemDelegate {
             }
         });
         //适配Toolbar变色
+        mSearchView.setOnFocusChangeListener(this);
     }
 
     @Override
     public void onSupportVisible() {
         super.onSupportVisible();
 
+    }
+
+    @Override
+    public void onFocusChange(View v, boolean hasFocus) {
+        if (hasFocus){
+            getParentDelegate().getSupportDelegate().start(new SearchDelegate());
+        }
     }
 
     /*@Override

@@ -79,4 +79,5 @@ public final class LatterPreference {
     public static String getCustomAppProfile(String key){
         return getAppPreference().getString(key,"");
     }
+
 }

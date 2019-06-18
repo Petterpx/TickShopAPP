@@ -1,9 +1,8 @@
 package com.petterp.latte_ui.refresh;
 
-import android.support.v4.app.ActivityCompat;
+import android.net.Uri;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
-import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -49,6 +48,41 @@ public class RefreshHandler implements SwipeRefreshLayout.OnRefreshListener, Bas
         return new RefreshHandler(swipeRefreshLayout, recyclerView, converter, new PaginBean());
     }
 
+
+    private void paging(String url) {
+        //每页显示的数据
+        final int pageSize = BEAN.getPageSize();
+        //当前页面显示数据
+        final int currentCount = BEAN.getCurrentCount();
+        //总数据条数
+        final int total = BEAN.getTotal();
+        //当前页码数
+        final int index = BEAN.getPageIndex();
+
+        if (mAdapter.getData().size() < pageSize || currentCount >= total) {
+            mAdapter.loadMoreEnd(true);
+        } else {
+            Latte.getHandler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    RestClient.builder()
+                            .url(url + index)
+                            .success(new ISuccess() {
+                                @Override
+                                public void onSuccess(String response) {
+                                    mAdapter.addData(CONVERTER.setJsonData(response).convert());
+                                    //累加数量
+                                    BEAN.setCurrentCount(mAdapter.getData().size());
+                                    //加载结束
+                                    mAdapter.loadMoreComplete();
+                                    BEAN.addIndex();
+                                }
+                            })
+                            .build().get();
+                }
+            }, 500);
+        }
+    }
 
     /**
      * 下拉刷新操作
@@ -98,8 +132,9 @@ public class RefreshHandler implements SwipeRefreshLayout.OnRefreshListener, Bas
                 .get();
     }
 
+
     @Override
     public void onLoadMoreRequested() {
-
+        paging("refresh.php?index=");
     }
 }
