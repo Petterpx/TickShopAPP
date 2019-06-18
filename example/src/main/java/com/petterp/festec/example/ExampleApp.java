@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 
 import com.facebook.stetho.Stetho;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
+import com.petterp.festec.example.event.ShareEvent;
 import com.petterp.latte.ec.database.DatabaseManager;
 import com.petterp.latte.ec.icon.FontEcModule;
 import com.petterp.latte_core.app.Latte;
@@ -37,6 +38,7 @@ public class ExampleApp extends Application {
                 .withHandler(handler)
                 .withJavascriptInterface("latte")
                 .withWebEvent("test",new TestEvent())
+                .withWebEvent("share",new ShareEvent())
                 .configure();
 //        initStetho();
         DatabaseManager.getInstance().init(this);

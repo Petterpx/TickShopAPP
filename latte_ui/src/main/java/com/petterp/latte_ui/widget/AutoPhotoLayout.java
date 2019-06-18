@@ -131,11 +131,14 @@ public final class AutoPhotoLayout extends LinearLayoutCompat {
                                 //设置图片逐渐消失的动画
                                 final AlphaAnimation animation = new AlphaAnimation(1, 0);
                                 animation.setDuration(500);
+                                //重複次數
                                 animation.setRepeatCount(0);
                                 animation.setFillAfter(true);
+                                //開始等待時間
                                 animation.setStartOffset(0);
                                 deleteImageViwe.setAnimation(animation);
                                 animation.start();
+                                //删除相应的图片
                                 AutoPhotoLayout.this.removeView(deleteImageViwe);
                                 mCurrentNum -= 1;
                                 //当数目达到上限时隐藏添加按钮，不足时显示

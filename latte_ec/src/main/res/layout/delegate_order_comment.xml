@@ -73,7 +73,7 @@
     <com.petterp.latte_ui.widget.AutoPhotoLayout
         android:id="@+id/custom_auto_photo_layout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:icon_size="10sp"
         app:item_margin="3"
         app:line_count="5"

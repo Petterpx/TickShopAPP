@@ -34,6 +34,9 @@ android {
         }
     }
 
+
+
+
 }
 
 dependencies {
@@ -145,4 +148,7 @@ dependencies {
     //极光推送
     api 'cn.jiguang.sdk:jpush:3.1.6'  // 此处以JPush 3.3.2 版本为例。
     api 'cn.jiguang.sdk:jcore:1.2.5'
+
+    //二维码扫描
+    implementation 'me.dm7.barcodescanner:zbar:1.9.13'
 }

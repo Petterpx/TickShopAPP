@@ -5,17 +5,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ContentFrameLayout;
-import android.widget.FrameLayout;
 
-import com.gyf.immersionbar.ImmersionBar;
 import com.petterp.latte.R;
 import com.petterp.latte_core.delegates.LatteDelegate;
 
 import me.yokeyword.fragmentation.ExtraTransaction;
 import me.yokeyword.fragmentation.ISupportActivity;
-import me.yokeyword.fragmentation.SupportActivity;
 import me.yokeyword.fragmentation.SupportActivityDelegate;
-import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
 
 /**
@@ -92,6 +88,5 @@ public abstract class ProxyActivity extends AppCompatActivity implements ISuppor
 
     @Override
     public void post(Runnable runnable) {
-
     }
 }

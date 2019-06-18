@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.joanzapata.iconify.widget.IconTextView;
 import com.petterp.latte.ec.R;
@@ -19,12 +20,16 @@ import com.petterp.latte.ec.R2;
 import com.petterp.latte.ec.main.EcBottomDelgate;
 import com.petterp.latte_core.util.Bootomzhaungtai.EachTooblar;
 import com.petterp.latte_core.delegates.bottom.BottomItemDelegate;
+import com.petterp.latte_core.util.callback.CallbackManager;
+import com.petterp.latte_core.util.callback.CallbackType;
+import com.petterp.latte_core.util.callback.IGlobalCallback;
 import com.petterp.latte_ui.refresh.RefreshHandler;
 import com.petterp.latte_ui.retyclear.BaseDecoration;
 
 import java.util.Objects;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * @author Petterp on 2019/4/22
@@ -45,6 +50,10 @@ public class IndexDelegate extends BottomItemDelegate {
     AppCompatEditText mSearchView = null;
     @BindView(R2.id.zhuangtai)
     TextView textView = null;
+    @OnClick(R2.id.icon_index_scan)
+    void onClickScanQrCode(){
+        startScanWithCheck(this.getParentDelegate());
+    }
 
     private RefreshHandler mRefreHandler = null;
 
@@ -130,6 +139,13 @@ public class IndexDelegate extends BottomItemDelegate {
         //传入下拉刷新事件,并生成了Adapter。。。
         mRefreHandler = RefreshHandler.create(mRefreshLayout, mRecyclerView, new IndexDataConverter());
         initRecyclearView();
+        //回调二维码扫描结果
+        CallbackManager.getInstance().addCallback(CallbackType.ON_SCAN, new IGlobalCallback<String>() {
+            @Override
+            public void executeCallback(@Nullable String args) {
+                Toast.makeText(getContext(), args, Toast.LENGTH_SHORT).show();
+            }
+        });
         //适配Toolbar变色
     }
 

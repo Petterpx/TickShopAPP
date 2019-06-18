@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.mob.sdk'
 
 android {
 
@@ -56,6 +57,50 @@ android {
               }
         }
  }
+
+    MobSDK {
+        appKey "2b6e2d429438e"
+        appSecret "602265d6f3ed1f283afc80a654e6723b"
+        ShareSDK {
+            devInfo {
+                QQ {
+                    appId "101654042"
+                    appKey "7a1e9b3038fb45744dbe4b8ba8e6fdf8"
+                }
+                Wechat {
+                    appId "wx4868b35061f87885"
+                    appSecret "64020361b8ec4c99936c0e3999a9f249"
+                    userName "gh_afb25ac019c9"
+                    path "pages/index/index.html?id=1"
+                    withShareTicket true
+                    miniprogramType 2
+                }
+                ShortMessage {}
+                Alipay {
+                    appId "2015072400185895"
+                }
+                SinaWeibo {
+                    appKey "568898243"
+                    appSecret "38a4f8204cc784f81f9f0daaf31e02e3"
+                    callbackUri "http://www.sharesdk.cn"
+                }
+                YouDao {
+                    hostType "product"
+                    appKey "dcde25dca105bcc36884ed4534dab940"
+                    appSecret "d98217b4020e7f1874263795f44838fe"
+                    callbackUri "http://www.sharesdk.cn"
+                }
+                WechatMoments {
+                    appId "wx4868b35061f87885"
+                    appSecret "64020361b8ec4c99936c0e3999a9f249"
+                }
+                WechatFavorite {
+                    appId "wx4868b35061f87885"
+                    appSecret "64020361b8ec4c99936c0e3999a9f249"
+                }
+            }
+        }
+    }
 }
 
 dependencies {
