@@ -4,8 +4,13 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.SimpleClickListener;
-import com.petterp.latte.ec.detall.GoodsDetaillDeleagte;
+import com.petterp.latte.ec.detail.GoodsDetailDelegate;
+import com.petterp.latte.ec.detail.GoodsInfoDelegate;
+import com.petterp.latte.ec.main.personal.address.AddresDelegate;
+import com.petterp.latte.ec.main.personal.list.ListBean;
 import com.petterp.latte_core.delegates.LatteDelegate;
+import com.petterp.latte_ui.retyclear.MulitpleItemEntity;
+import com.petterp.latte_ui.retyclear.MultipleFidls;
 
 /**
  * @author Petterp on 2019/4/27
@@ -25,8 +30,13 @@ public class IndexItemClickListener extends SimpleClickListener {
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        final GoodsDetaillDeleagte deleagte=GoodsDetaillDeleagte.create();
-        DELEGATE.getSupportDelegate().start(deleagte);
+        final MulitpleItemEntity entity= (MulitpleItemEntity) baseQuickAdapter.getData().get(position);
+        final int goodsId=entity.getField(MultipleFidls.ID);
+        //传递ID
+        final GoodsDetailDelegate deleagte=GoodsDetailDelegate.create(goodsId);
+//        DELEGATE.getSupportDelegate().start(deleagte);
+        DELEGATE.getParentDelegate().getSupportDelegate().start(deleagte);
+
     }
 
 

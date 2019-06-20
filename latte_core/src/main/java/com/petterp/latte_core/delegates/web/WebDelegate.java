@@ -63,7 +63,7 @@ public abstract class WebDelegate extends LatteDelegate implements IWebViewIniti
                 mWebView.addJavascriptInterface(LatteWebInterface.create(this), name);
                 mIsWebViewAbaiable = true;
             } else {
-                throw new NullPointerException("Petterp/ Initallize is Null!");
+                throw new NullPointerException("Petterp/Initallize is Null!");
             }
         }
     }

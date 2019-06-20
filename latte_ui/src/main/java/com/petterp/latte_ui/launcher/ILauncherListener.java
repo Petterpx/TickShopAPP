@@ -1,5 +1,7 @@
 package com.petterp.latte_ui.launcher;
 
+import com.petterp.latte_core.delegates.LatteDelegate;
+
 /**
  * @author Petterp on 2019/4/21
  * Summary:

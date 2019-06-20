@@ -28,7 +28,7 @@ import butterknife.OnClick;
 
 /**
  * @author Petterp on 2019/4/21
- * Summary:
+ * Summary:登录
  * 邮箱：1509492795@qq.com
  */
 public class SignInDelegate extends LatteDelegate {

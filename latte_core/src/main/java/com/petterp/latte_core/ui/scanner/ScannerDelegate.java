@@ -18,7 +18,7 @@ import me.dm7.barcodescanner.zbar.ZBarScannerView;
 
 /**
  * @author Petterp on 2019/6/18
- * Summary:
+ * Summary:二维码扫描
  * 邮箱：1509492795@qq.com
  */
 public class ScannerDelegate extends LatteDelegate implements ZBarScannerView.ResultHandler {

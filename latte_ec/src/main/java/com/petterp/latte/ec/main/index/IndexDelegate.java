@@ -19,6 +19,7 @@ import com.petterp.latte.ec.R;
 import com.petterp.latte.ec.R2;
 import com.petterp.latte.ec.main.EcBottomDelgate;
 import com.petterp.latte.ec.main.index.search.SearchDelegate;
+import com.petterp.latte.ec.main.personal.PersonalClickListener;
 import com.petterp.latte_core.util.Bootomzhaungtai.EachTooblar;
 import com.petterp.latte_core.delegates.bottom.BottomItemDelegate;
 import com.petterp.latte_core.util.callback.CallbackManager;
@@ -47,6 +48,7 @@ public class IndexDelegate extends BottomItemDelegate implements View.OnFocusCha
     Toolbar mToolbar = null;
     @BindView(R2.id.icon_index_scan)
     IconTextView mIconScan = null;
+
     @BindView(R2.id.et_search_view)
     AppCompatEditText mSearchView = null;
     @BindView(R2.id.zhuangtai)
@@ -80,8 +82,8 @@ public class IndexDelegate extends BottomItemDelegate implements View.OnFocusCha
         final GridLayoutManager manager = new GridLayoutManager(getContext(), 4);
         mRecyclerView.setLayoutManager(manager);
         //得到父级容器
-        final EcBottomDelgate ecBottomDelgate = getParentDelegate();
-        mRecyclerView.addOnItemTouchListener(IndexItemClickListener.create(ecBottomDelgate));
+//        final EcBottomDelgate ecBottomDelgate = getParentDelegate();
+        mRecyclerView.addOnItemTouchListener(new IndexItemClickListener(this));
     }
 
 

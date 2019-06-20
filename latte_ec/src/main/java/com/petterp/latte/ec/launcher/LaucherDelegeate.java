@@ -88,7 +88,8 @@ public class LaucherDelegeate extends LatteDelegate implements ITimerListener {
      */
     private void checkIsShowScroll(){
         if (!LatterPreference.getAppFlag(ScrollLauncherTag.HAS_FIRST_LAUNCHER_APP.name())){
-            //退栈再启动一个新的
+            //退栈再启动一个新的\
+//            getChildFragmentManager().beginTransaction().replace()
             getSupportDelegate().startWithPop(new LaunchaerScrollDelegeate());
         }else{
             //检查用户是否登录了App
@@ -107,7 +108,6 @@ public class LaucherDelegeate extends LatteDelegate implements ITimerListener {
                     if (mILauncherListener!=null){
 //                        mILauncherListener.onLauncherFinish(OnLauncherFinishTag.NOT_SIGNED);
                         mILauncherListener.onLauncherFinish(OnLauncherFinishTag.SIGNED);
-
                     }
                 }
             });
