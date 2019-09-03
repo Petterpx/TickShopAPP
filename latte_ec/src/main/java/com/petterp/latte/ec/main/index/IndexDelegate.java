@@ -69,7 +69,6 @@ public class IndexDelegate extends BottomItemDelegate implements View.OnFocusCha
                 android.R.color.holo_blue_bright,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light
-
         );
         //设置为true，在下拉的过程中，圆圈会由小变大，第二个参数是起始高度，第三个参数是终止高度
         mRefreshLayout.setProgressViewOffset(true, 120, 300);
@@ -166,9 +165,12 @@ public class IndexDelegate extends BottomItemDelegate implements View.OnFocusCha
         }
     }
 
-    /*@Override
+    /*
+    @Override
     public void onSupportInvisible() {
+
         super.onSupportInvisible();
 
-    }*/
+    }
+    */
 }

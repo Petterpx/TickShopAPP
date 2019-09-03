@@ -81,8 +81,5 @@ public class UserProfileDelegate extends LatteDelegate {
 
     }
 
-    @Override
-    public void onLazyInitView(@Nullable Bundle savedInstanceState) {
-        super.onLazyInitView(savedInstanceState);
-    }
+
 }

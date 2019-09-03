@@ -35,11 +35,8 @@ public class LaunchaerScrollDelegeate extends LatteDelegate implements OnItemCli
      * 加载图片轮播
      */
     private void initBanner(){
-        INTEGERS.add(R.mipmap.launcher_01);
-        INTEGERS.add(R.mipmap.launcher_02);
-        INTEGERS.add(R.mipmap.launcher_03);
-        INTEGERS.add(R.mipmap.launcher_04);
-        INTEGERS.add(R.mipmap.launcher_05);
+        INTEGERS.add(R.mipmap.laucher_1);
+        INTEGERS.add(R.mipmap.laucher_2);
         mConvententBanner
                 .setPages(new LauncherHolderCreator(),INTEGERS)
                 //设置底部小圆点

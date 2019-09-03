@@ -28,7 +28,7 @@ public class WebDelegateImpl extends WebDelegate {
     }
 
 
-    //自己创建自己
+    //Bundle
     public static WebDelegateImpl create(String url){
         final Bundle args=new Bundle();
         args.putString(RouteKeys.URL.name(),url);

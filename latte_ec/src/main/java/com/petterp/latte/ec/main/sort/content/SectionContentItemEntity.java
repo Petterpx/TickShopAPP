@@ -6,6 +6,11 @@ package com.petterp.latte.ec.main.sort.content;
  * 邮箱：1509492795@qq.com
  */
 public class SectionContentItemEntity {
+
+    private int mgoodsId=0;
+    private String mgoodsName=null;
+    private String mgoodsThumb=null;
+
     public int getMgoodsId() {
         return mgoodsId;
     }
@@ -30,8 +35,6 @@ public class SectionContentItemEntity {
         this.mgoodsThumb = mgoodsThumb;
     }
 
-    private int mgoodsId=0;
-    private String mgoodsName=null;
-    private String mgoodsThumb=null;
+
 
 }

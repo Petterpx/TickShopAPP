@@ -9,6 +9,7 @@ import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.ViewStubCompat;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -183,6 +184,7 @@ public class ShopCartDelegate extends BottomItemDelegate implements ISuccess, Ic
 
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View view) {
+        Log.e("Demo","斯卡迪看见俺不能收到卡不到卡不到好久安保大厦");
         mIconSelectAll.setTag(0);
         RestClient.builder()
                 .url("/data/shop_cart_data.json")

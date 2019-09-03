@@ -58,21 +58,22 @@ public class SignInDelegate extends LatteDelegate {
 
     @OnClick(R2.id.btn_sign_in)
     void onclickSignup() {
-        if (chechForm()) {
-            com.alibaba.fastjson.JSONObject json=new com.alibaba.fastjson.JSONObject();
-            json.put("pswd",Objects.requireNonNull(mPswd.getText()).toString());
-            json.put("email",Objects.requireNonNull(mEmail.getText()).toString());
-            //转为字符串
-            String response=json.toJSONString();
-//            LatteLogger.json("USER_PROFILE",response);
-            if (!SignHandler.onSignIN(response,mISignListener)){
-                Toast.makeText(getContext(), "用户信息失败", Toast.LENGTH_SHORT).show();
-            }else{
-                getSupportDelegate().startWithPop(new EcBottomDelgate());
-            }
-        }else{
-            Toast.makeText(getContext(), "验证失败", Toast.LENGTH_SHORT).show();
-        }
+//        if (chechForm()) {
+//            com.alibaba.fastjson.JSONObject json=new com.alibaba.fastjson.JSONObject();
+//            json.put("pswd",Objects.requireNonNull(mPswd.getText()).toString());
+//            json.put("email",Objects.requireNonNull(mEmail.getText()).toString());
+//            //转为字符串
+//            String response=json.toJSONString();
+////            LatteLogger.json("USER_PROFILE",response);
+//            if (!SignHandler.onSignIN(response,mISignListener)){
+//                Toast.makeText(getContext(), "用户信息失败", Toast.LENGTH_SHORT).show();
+//            }else{
+//
+//            }
+//        }else{
+//            Toast.makeText(getContext(), "验证失败", Toast.LENGTH_SHORT).show();
+//        }
+        getSupportDelegate().startWithPop(new EcBottomDelgate());
     }
 
     @Override

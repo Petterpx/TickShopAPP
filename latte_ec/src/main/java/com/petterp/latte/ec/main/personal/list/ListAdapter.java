@@ -23,17 +23,19 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * 邮箱：1509492795@qq.com
  */
 public class ListAdapter extends BaseMultiItemQuickAdapter<ListBean, BaseViewHolder> {
-    private static final RequestOptions OPTIONS=new RequestOptions()
+    private static final RequestOptions OPTIONS = new RequestOptions()
             .centerCrop()
             .fitCenter()
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .dontAnimate();
+
     public ListAdapter(List<ListBean> data) {
         super(data);
         addItemType(ListItemType.ITEM_BORNAL, R.layout.arrow_item_layout);
         addItemType(ListItemType.ITEM_AVATAR, R.layout.arrow_item_avator);
         addItemType(ListItemType.ITEM_SWITCH, R.layout.arrow_switch_layout);
     }
+
     public IListOnclick listOnclick;
 
     @Override
@@ -41,11 +43,11 @@ public class ListAdapter extends BaseMultiItemQuickAdapter<ListBean, BaseViewHol
         switch (helper.getItemViewType()) {
             case ListItemType.ITEM_BORNAL:
                 helper.setText(R.id.tv_arrow_text, item.getmText());
-                helper.setText(R.id.tv_arrow_value,item.getmValue());
+                helper.setText(R.id.tv_arrow_value, item.getmValue());
                 break;
             case ListItemType.ITEM_AVATAR:
-                RelativeLayout relativeLayout=helper.itemView.findViewById(R.id.rv_arrow_layout);
-                CircleImageView circleImageView=helper.itemView.findViewById(R.id.img_arrow_avatar);
+                RelativeLayout relativeLayout = helper.itemView.findViewById(R.id.rv_arrow_layout);
+                CircleImageView circleImageView = helper.itemView.findViewById(R.id.img_arrow_avatar);
                 relativeLayout.setOnClickListener(v -> {
                     listOnclick.Rvonclik();
                 });
@@ -57,12 +59,12 @@ public class ListAdapter extends BaseMultiItemQuickAdapter<ListBean, BaseViewHol
                         .apply(OPTIONS)
                         .into((ImageView) helper.getView(R.id.img_arrow_avatar));
                 break;
-                case ListItemType.ITEM_SWITCH:
-                    helper.setText(R.id.tv_arrow_switch_text,item.getmText());
-                    final SwitchCompat switchCompat=helper.getView(R.id.list_item_switch);
-                    switchCompat.setChecked(true);
-                    switchCompat.setOnCheckedChangeListener(item.getmOnCheckedChangeListener());
-                    break;
+            case ListItemType.ITEM_SWITCH:
+                helper.setText(R.id.tv_arrow_switch_text, item.getmText());
+                final SwitchCompat switchCompat = helper.getView(R.id.list_item_switch);
+                switchCompat.setChecked(true);
+                switchCompat.setOnCheckedChangeListener(item.getmOnCheckedChangeListener());
+                break;
             default:
                 break;
         }

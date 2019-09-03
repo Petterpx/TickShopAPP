@@ -19,7 +19,7 @@ import okhttp3.ResponseBody;
 
 /**
  * auther: Petterp on 2019/4/17
- * Summary: 网络请求框架——建造者模式
+ * Summary: 网络请求框架
  *
  * @author Pettepr
  */

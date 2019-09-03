@@ -12,8 +12,8 @@ public class SectionBean extends SectionEntity<SectionContentItemEntity> {
     private boolean mIsMore=false;
     private int mId=-1;
 
-    public SectionBean(SectionContentItemEntity secionContentItemEntry) {
-        super(secionContentItemEntry);
+    public SectionBean(SectionContentItemEntity sectionContentItemEntity) {
+        super(sectionContentItemEntity);
     }
 
     //isHaeader是不是标题

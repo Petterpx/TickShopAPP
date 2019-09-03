@@ -10,7 +10,7 @@ import android.webkit.WebView;
 
 /**
  * @author Petterp on 2019/4/28
- * Summary:
+ * Summary:权限相关
  * 邮箱：1509492795@qq.com
  */
 public class WebViewlinitalizer {
